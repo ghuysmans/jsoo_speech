@@ -1,0 +1,5 @@
+(executable
+ (name demo)
+ (modes js)
+ (libraries speech)
+ (preprocess (pps js_of_ocaml-ppx)))
