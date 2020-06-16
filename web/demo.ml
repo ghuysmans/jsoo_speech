@@ -9,7 +9,7 @@ let () =
       (* a |> Array.iter (fun v -> print_endline (Js.to_string v##.name)); *)
       let l = a.(0) in
       Printf.printf "voice: %s\n" (Js.to_string l##.name);
-      Speech.speak "hello world" >>= fun dt ->
+      Speech.await @@ Speech.utterance "hello world" >>= fun dt ->
       Printf.printf "elapsed: %f\n" dt;
       Lwt.return_unit
   )
